@@ -1,0 +1,35 @@
+---
+swagger: "2.0"
+info:
+  version: "1.0"
+  title: "RAD_Pro_EmptyScheme_Test"
+host: "SAG-9WC1GX3:5556"
+basePath: "/rad/TestRAD_2:RAD_Pro_Test"
+consumes:
+- "application/json"
+produces:
+- "application/json"
+paths:
+  /RestResource_Test:
+    get:
+      operationId: "RestResource_Test_GET_1"
+      parameters:
+      - name: "input"
+        in: "query"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "OK"
+          schema:
+            $ref: "#/definitions/RestResource_Test_GET_response"
+        "401":
+          description: "Access Denied"
+definitions:
+  RestResource_Test_GET_response:
+    type: "object"
+    required:
+    - "output"
+    properties:
+      output:
+        type: "string"
